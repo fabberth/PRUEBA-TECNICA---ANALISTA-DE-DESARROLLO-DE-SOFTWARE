@@ -187,7 +187,6 @@ TestResults/
 ## Others
 *.dbmdl
 *.bak
-*.sql
 *.mdf
 *.ldf
 

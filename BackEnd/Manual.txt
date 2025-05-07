@@ -1,0 +1,24 @@
+Manual
+
+Pasos:
+
+1.	Crear base de datos
+
+2.	Crear usuario y asignar permisos a la base de datos
+
+3.	Ejecutar "CREATE.sql" que se encuentra en la carpeta Script
+
+4.	Abrir archivo "WebAPI.sln" con Visual Studio 2022
+
+5.	Diligenciar archivo "appsettings.json" o "appsettings.Development.json", parámetro *DefaultConnection*
+
+6.	Verificar que las dependencias del proyecto estén listas para usar
+
+7.	Iniciar proyecto WebAPI
+
+Si siguió el paso a paso, al iniciar el proyecto le debe abrir una ventana en su navegador con la documentación de swagger
+
+
+Pruebas Unitarias con xUnit
+
+8.	En Visual Studio 2022, clic derecho sobre el proyecto "WebAPI.Tests", Opción (Ejecutar pruebas)

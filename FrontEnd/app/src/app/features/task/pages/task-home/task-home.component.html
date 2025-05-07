@@ -1,0 +1,28 @@
+<h2>Nuevo</h2>
+<input [(ngModel)]="newTask.title" placeholder="Título">
+<input [(ngModel)]="newTask.description" placeholder="Descripción">
+<button (click)="addTask()">Agregar</button>
+
+<br><br><br>
+
+<h2>Listado</h2>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Completed</th>
+        <th>Actions</th>
+    </tr>
+
+    <tr *ngFor="let task of tasks">
+        <td>{{ task.id }}</td>
+        <td><strong [style.text-decoration]="task.completed ? 'line-through' : 'none'">{{ task.title }}</strong></td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.completed }}</td>
+        <td>
+            <button (click)="editTask(task)">Editar</button>
+            <button (click)="deleteTask(task.id)">Eliminar</button>
+        </td>
+    </tr>
+</table>

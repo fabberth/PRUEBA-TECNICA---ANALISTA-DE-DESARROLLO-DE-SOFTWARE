@@ -1,11 +1,42 @@
-<h2>Nuevo</h2>
-<input [(ngModel)]="newTask.title" placeholder="Título">
-<input [(ngModel)]="newTask.description" placeholder="Descripción">
-<button (click)="addTask()">Agregar</button>
+<div style="display: flex; justify-content: flex-end; margin-top: 8px;">
+    
+    <a href="/api" > <button mat-flat-button>go to API integration</button> </a>
+    
+</div>
 
-<br><br><br>
 
-<h2>Listado</h2>
+<div class="newTask">
+
+    <h2>New</h2>
+
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="newTask.title" name="title">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput [(ngModel)]="newTask.description" name="Description">
+    </mat-form-field>
+
+    <button (click)="addTask()" mat-raised-button >Add</button>
+
+</div>
+
+<br><br>
+
+<h2>List</h2>
+
+<div class="filter">
+    <mat-form-field appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select [(value)]="filterValue">
+            <mat-option value="all">All</mat-option>
+            <mat-option value="completed">Completed</mat-option>
+            <mat-option value="pending">Pending</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
 <table>
     <tr>
         <th>Id</th>
@@ -15,14 +46,26 @@
         <th>Actions</th>
     </tr>
 
-    <tr *ngFor="let task of tasks">
+    <tr *ngFor="let task of getFilteredTasks()">
         <td>{{ task.id }}</td>
         <td><strong [style.text-decoration]="task.completed ? 'line-through' : 'none'">{{ task.title }}</strong></td>
         <td>{{ task.description }}</td>
-        <td>{{ task.completed }}</td>
-        <td>
-            <button (click)="editTask(task)">Editar</button>
-            <button (click)="deleteTask(task.id)">Eliminar</button>
+        <td>{{ task.completed ? '✅' : '❌' }}</td>
+        <td class="table-actions">
+            
+
+                <button *ngIf="!task.completed" (click)="markAsCompleted(task.id)" mat-stroked-button class="button-spacing">Mark as completed</button>
+                <span *ngIf="task.completed" class="completada button-spacing">✔ Completed</span>
+
+                <button (click)="openEditDialog(task)" mat-fab class="button-spacing">
+                    <mat-icon>edit</mat-icon>
+                </button>
+
+                <button (click)="deleteTask(task.id)" mat-fab class="button-spacing">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                
+            
         </td>
     </tr>
 </table>

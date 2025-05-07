@@ -1,0 +1,59 @@
+<div style="display: flex; justify-content: flex-end; margin-top: 8px;">
+    
+    <a href="/" > <button mat-flat-button>go to Home</button> </a>
+    
+</div>
+
+
+<div class="newTask">
+
+    <h2>New</h2>
+
+    <mat-form-field>
+        <mat-label>Todo</mat-label>
+        <input matInput [(ngModel)]="newTodo.todo" name="todo">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>User Id</mat-label>
+        <input matInput [(ngModel)]="newTodo.userId" name="userId" type="number">
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="newTodo.completed" name="completed">Completed</mat-checkbox>
+
+    <button (click)="addTodo()" mat-raised-button >Create</button>
+
+</div>
+
+<br><br>
+
+
+<h2>List</h2>
+<br><br>
+<table>
+
+    <tr>
+        <th>Id</th>
+        <th>Todo</th>
+        <th>Completed</th>
+        <th>User Id</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let todo of todos">
+        <td>{{ todo.id }}</td>
+        <td>{{ todo.todo }}</td>
+        <td>{{ todo.completed ? '✅' : '❌' }}</td>
+        <td>{{ todo.userId }}</td>
+        <td class="table-actions">
+            <button (click)="openEditDialog(todo)" mat-fab class="button-spacing">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="deleteTodo(todo.id)" mat-fab class="button-spacing">
+                <mat-icon>delete</mat-icon>
+            </button>
+
+        </td>
+    </tr>
+
+</table>
+  

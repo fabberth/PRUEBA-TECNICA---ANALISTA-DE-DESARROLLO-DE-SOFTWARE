@@ -134,3 +134,64 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+
+
+## Build artifacts
+bin/
+obj/
+out/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## VS Code settings
+.vscode/
+
+## Visual Studio
+.vs/
+
+## ASP.NET Core secrets
+
+## NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+## Logs
+*.log
+
+## OS generated files
+.DS_Store
+Thumbs.db
+
+## Dotnet-generated
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider IDE
+.idea/
+
+# Test results
+TestResults/
+*.coverage
+*.coveragexml
+*.test.json
+
+## Others
+*.dbmdl
+*.bak
+*.sql
+*.mdf
+*.ldf
+
+# Temporary files
+*.tmp
+*.temp
+~$*

@@ -20,14 +20,14 @@ Este proyecto es una API RESTful desarrollada con **ASP.NET Core 8** y **Entity 
 ## 🧱 Estructura del proyecto
 
 WebAPI/
-├── Controllers/ # Controladores HTTP
-├── Services/ # Lógica de negocio
-├── Data/ # EF Core DbContext
-├── Models/ # Entidades de dominio
-├── Helpers/ # Utilidades como ApiResponse
-├── appsettings.json # Configuración del proyecto
-├── Dockerfile # Contenedor Docker
-└── WebAPI.csproj
+├── Controllers/ # Controladores HTTP 
+├── Services/ # Lógica de negocio 
+├── Data/ # EF Core DbContext 
+├── Models/ # Entidades de dominio 
+├── Helpers/ # Utilidades como ApiResponse 
+├── appsettings.json # Configuración del proyecto 
+├── Dockerfile # Contenedor Docker 
+└── WebAPI.csproj 
 
-WebAPI.Tests/
-└── UnitTest1.cs # Proyecto de pruebas (xUnit)
+WebAPI.Tests/ 
+└── UnitTest1.cs # Proyecto de pruebas (xUnit) 

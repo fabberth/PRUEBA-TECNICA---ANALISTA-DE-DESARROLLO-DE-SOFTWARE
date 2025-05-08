@@ -43,7 +43,7 @@ WebAPI.Tests/
 
 # Front-End
 
-Este proyecto fue desarrollado como parte de un proceso de selección técnica. Utiliza Angular 19 y está dividido en dos funcionalidades principales:
+Este proyecto fue desarrollado  utiliza Angular 19 y está dividido en dos funcionalidades principales:
 
 1. **CRUD completo de tareas locales** (sin conexión a API), donde se puede:
    - Crear, leer, actualizar y eliminar tareas.

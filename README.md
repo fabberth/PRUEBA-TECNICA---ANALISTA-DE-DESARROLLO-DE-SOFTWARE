@@ -43,14 +43,14 @@ WebAPI.Tests/
 
 # Front-End
 
-Este proyecto fue desarrollado  utiliza Angular 19 y está dividido en dos funcionalidades principales:
+Este proyecto fue desarrollado que utiliza **Angular 19** y está dividido en dos funcionalidades principales:
 
 1. **CRUD completo de tareas locales** (sin conexión a API), donde se puede:
    - Crear, leer, actualizar y eliminar tareas.
    - Cambiar el estado de las tareas (completadas o pendientes).
    - Utiliza `MatDialog` para edición y `MatSnackBar` para retroalimentación visual.
 
-2. **CRUD de tareas con integración a una API externa**, evaluando:
+2. **CRUD de tareas con integración a una [API externa]([https://angular.io/docs](https://dummyjson.com/docs/todos#todos-all)) **, evaluando:
    - Consumo de servicios HTTP.
    - Gestión de estados asincrónicos.
    - Separación de responsabilidades entre componentes, servicios y modelos.

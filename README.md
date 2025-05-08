@@ -1,6 +1,6 @@
 # PRUEBA TECNICA - ANALISTA DE DESARROLLO DE SOFTWARE
 
-# Manueles:
+# Manuales:
 
 	Back-End -> BackEnd/Manual.txt
 	Front-End -> FrontEnd/Manual.txt

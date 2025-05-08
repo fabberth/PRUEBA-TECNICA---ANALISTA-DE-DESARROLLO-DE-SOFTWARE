@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
+  standalone: true,
   selector: 'app-task-home',
   imports: [CommonModule, FormsModule, MatInputModule, MatButtonModule, MatIconModule, MatSelectModule],
   templateUrl: './task-home.component.html',
@@ -23,11 +24,11 @@ export class TaskHomeComponent {
 
   private _snackBar = inject(MatSnackBar);
 
-  constructor(private dialog: MatDialog) {}
-
   newTask: Task = { id: 0, title: '', description: '', completed: false };
 
   filterValue: string = 'all';
+
+  constructor(private dialog: MatDialog) {}
 
   getFilteredTasks() {
     switch (this.filterValue) {

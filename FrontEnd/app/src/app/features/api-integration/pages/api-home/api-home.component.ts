@@ -56,7 +56,7 @@ export class ApiHomeComponent implements OnInit{
     
       dialogRef.afterClosed().subscribe((result: Todo | undefined) => {
         if (result) {
-
+          
           this.apiService.updateTodo(result).subscribe(success => {
             if (success) {
               this._snackBar.open('Updated element', 'OK', {duration: 3000});
@@ -66,16 +66,6 @@ export class ApiHomeComponent implements OnInit{
           });
         }
       });
-  }
-
-  updateTodo(){
-    this.apiService.updateTodo(this.newTodo).subscribe(success => {
-      if (success) {
-        this._snackBar.open('Updated element', 'OK', {duration: 3000});
-      } else {
-        this._snackBar.open('Error API', 'OK', {duration: 3000});
-      }
-    });
   }
 
   deleteTodo(id: number){

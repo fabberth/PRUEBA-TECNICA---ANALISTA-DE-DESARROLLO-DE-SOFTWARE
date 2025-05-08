@@ -12,6 +12,9 @@ export class ApiService {
 
   private apiUrl = 'https://dummyjson.com/';
 
+ /**
+ * Obtiene listado de la entidad Todos
+ */
   getTodos(): Observable<TodoResponse> {
 
     return this.http.get<TodoResponse>(this.apiUrl + 'todos').pipe(
@@ -30,6 +33,9 @@ export class ApiService {
     
   }
 
+  /**
+   * Añade una entidad Todo
+   */
   addTodo(todo: Todo): Observable<Boolean> {
 
     const body = {
@@ -51,6 +57,9 @@ export class ApiService {
     
   }
 
+  /**
+   * Actualiza entidad Todo
+   */
   updateTodo(todo: Todo): Observable<Boolean> {
 
     const body = {
@@ -72,6 +81,11 @@ export class ApiService {
     
   }
 
+  /**
+   * Elimina entidad Todo
+   * @param id 
+   * @returns 
+   */
   deleteTodo(id: number): Observable<boolean> {
     
     return this.http.delete(this.apiUrl + 'todos/' + id).pipe(

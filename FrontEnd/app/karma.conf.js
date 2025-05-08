@@ -1,8 +1,6 @@
 module.exports = function (config) {
     config.set({
       hostname: 'localhost',
-      port: 9999,
-      listenAddress: '0.0.0.0',
       basePath: '',
       frameworks: ['jasmine', '@angular-devkit/build-angular'],
       plugins: [

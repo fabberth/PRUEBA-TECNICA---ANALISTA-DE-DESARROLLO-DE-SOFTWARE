@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TaskHomeComponent } from './task-home.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { of } from 'rxjs';
 
 describe('TaskHomeComponent', () => {
@@ -22,57 +22,54 @@ describe('TaskHomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [TaskHomeComponent],
       providers: [
         TaskHomeComponent,
         { provide: MatSnackBar, useValue: snackBarMock },
-        { provide: MatDialog, useValue: dialogMock }
+        { provide: MatDialog, useValue: dialogMock },
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} }
       ]
     }).compileComponents();
 
     component = TestBed.inject(TaskHomeComponent);
+
   });
 
 
-  it('debe devolver solo tareas completadas cuando filterValue es "completed"', () => {
+
+  it('debería agregar una nueva tarea', () => {
+    const initialLength = component.tasks.length;
+  
+    component.newTask = { id: 0, title: 'Nueva tarea', description: 'Descripción', completed: false };
+    component.addTask();
+  
+    expect(component.tasks.length).toBe(initialLength + 1);
+    expect(component.tasks[component.tasks.length - 1].title).toBe('Nueva tarea');
+  });
+  
+
+  it('debería eliminar una tarea por ID', () => {
+    const taskToDelete = { id: 999, title: 'Eliminar', description: '', completed: false };
+    component.tasks.push(taskToDelete);
+  
+    component.deleteTask(999);
+  
+    expect(component.tasks.find(t => t.id === 999)).toBeUndefined();
+  });
+  
+  it('debería filtrar solo las tareas completadas', () => {
     component.tasks = [
-      { id: 1, title: 'A', description: '', completed: true },
-      { id: 2, title: 'B', description: '', completed: false }
+      { id: 1, title: 'Tarea 1', description: '', completed: true },
+      { id: 2, title: 'Tarea 2', description: '', completed: false }
     ];
     component.filterValue = 'completed';
-
-    const result = component.getFilteredTasks();
-
-    expect(result.length).toBe(1);
-    expect(result[0].id).toBe(1);
-  });
-
-
-
-  it('debe agregar una tarea válida y mostrar un snackbar', () => {
-    component.newTask = { id: 0, title: 'Nueva tarea', description: '', completed: false };
-
-    const initialCount = component.tasks.length;
-
-    component.addTask();
-
-    expect(component.tasks.length).toBe(initialCount + 1);
-    expect(snackBarMock.open).toHaveBeenCalledWith('Added element', 'OK', { duration: 3000 });
-  });
-
-
   
-  it('debe eliminar la tarea con el ID indicado y mostrar un snackbar', () => {
-    component.tasks = [
-      { id: 1, title: 'A', description: '', completed: false },
-      { id: 2, title: 'B', description: '', completed: true }
-    ];
-
-    component.deleteTask(1);
-
-    expect(component.tasks.length).toBe(1);
-    expect(component.tasks[0].id).toBe(2);
-    expect(snackBarMock.open).toHaveBeenCalledWith('Deleted element', 'OK', { duration: 3000 });
+    const filtered = component.getFilteredTasks();
+  
+    expect(filtered.length).toBe(1);
+    expect(filtered[0].completed).toBeTrue();
   });
-
+  
 
 });

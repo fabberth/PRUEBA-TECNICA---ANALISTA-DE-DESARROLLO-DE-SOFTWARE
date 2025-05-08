@@ -1,0 +1,30 @@
+Manual Front-End
+
+Requisitos:
+
+-	Node: 18.20.8
+-	Angular CLI: 19.2.8
+-	Package Manager: npm 10.8.2
+
+
+Pasos:
+
+1.	Abrir carpeta "app" con Visual Studio Code
+
+2.	Abrir nueva terminal en Visual Studio Code
+
+3.	Ejecutar comando: npm i
+
+4.	Ejecutar comando: ng serve
+
+5.	Abrir pestaña en su navegador con la URL informada en consola
+
+
+Si siguió el paso a paso, le debe cargar la aplicación desplegada
+
+
+Pruebas Unitarias con Jasmine y Karma
+
+6.	En Visual Studio Code, ejecutar el comando: ng test
+
+NOTA: Requiere el navegador Google Chrome

@@ -1,22 +1,28 @@
-Manual
+Manual Back-End
+
+Requisitos:
+
+-	Microsoft SQL Server 2019 (RTM-GDR) (KB5046859) - 15.0.2130.3 (X64)   Oct 18 2024 15:25:23
+-	.Net 8.0
+
 
 Pasos:
 
-1.	Crear base de datos
+1.	Abrir SQL Server Management Studio o su administrados de BD
 
-2.	Crear usuario y asignar permisos a la base de datos
+2.	Ejecutar "CREATE.sql" que se encuentra en la carpeta Script
 
-3.	Ejecutar "CREATE.sql" que se encuentra en la carpeta Script
+3.	Crear usuario y asignar permisos a la base de datos "WebAPI"
 
 4.	Abrir archivo "WebAPI.sln" con Visual Studio 2022
 
 5.	Diligenciar archivo "appsettings.json" o "appsettings.Development.json", parámetro *DefaultConnection*
 
-6.	Verificar que las dependencias del proyecto estén listas para usar
+6.	Verificar que las DEPENDENCIAS del proyecto estén listas para usar
 
 7.	Iniciar proyecto WebAPI
 
-Si siguió el paso a paso, al iniciar el proyecto le debe abrir una ventana en su navegador con la documentación de swagger
+Si siguió el paso a paso, al iniciar el proyecto le debe abrir una ventana en su navegador con la documentación de Swagger
 
 
 Pruebas Unitarias con xUnit

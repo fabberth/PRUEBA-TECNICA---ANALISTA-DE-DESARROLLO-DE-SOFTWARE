@@ -1,3 +1,13 @@
+-- Crear base de datos si no existe
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'WebAPI')
+BEGIN
+    CREATE DATABASE WebAPI;
+    PRINT 'Base de datos creada.';
+END
+GO
+
+-- Cambiar el contexto a la base de datos
+USE WebAPI;
 
 -- Crear la tabla Employees
 IF OBJECT_ID('dbo.Employees', 'U') IS NULL
@@ -36,7 +46,7 @@ BEGIN
     ORDER BY 
         HireDate ASC;
 END;
-
+GO
 
 --	Datos de prueba
 

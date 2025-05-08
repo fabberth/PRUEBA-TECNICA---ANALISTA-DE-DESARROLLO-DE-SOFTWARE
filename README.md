@@ -50,10 +50,11 @@ Este proyecto fue desarrollado que utiliza **Angular 19** y está dividido en do
    - Cambiar el estado de las tareas (completadas o pendientes).
    - Utiliza `MatDialog` para edición y `MatSnackBar` para retroalimentación visual.
 
-2. **CRUD de tareas con integración a una [API externa]([https://angular.io/docs](https://dummyjson.com/docs/todos#todos-all)) **, evaluando:
+2. **CRUD de tareas con integración a una API externa**, evaluando:
    - Consumo de servicios HTTP.
    - Gestión de estados asincrónicos.
    - Separación de responsabilidades entre componentes, servicios y modelos.
+[API externa](https://dummyjson.com/docs/todos#todos-all)
 
 ---
 
